@@ -41,6 +41,12 @@ class UsersController < ApplicationController
 		end
 	end
 
+  def user_item_destroy
+    @user = User.find(current_user)
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to user_items_path
+  end
 
 
   def index
