@@ -24,6 +24,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_item_edit
+    @user = User.find(current_user)
+    @item = Item.find(params[:id])
+  end
+
+  def user_item_update
+		@user = User.find(current_user)
+		@item = Item.find(params[:id])
+		# @item.user_id = current_user.id
+
+		if @item.update_attributes(item_params)
+			redirect_to user_item_path
+		else
+			render :user_item_edit
+		end
+	end
 
 
 

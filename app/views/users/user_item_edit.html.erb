@@ -1,0 +1,30 @@
+<h1>Edit Item!</h1>
+
+<%= form_for ([@user, @item]) do |f| %>
+    <div>
+      User Name = <%= @user.first_name %>
+    </div>
+
+    <div>
+        <%= f.label :item_name %>
+        <%= f.text_field :item_name %>
+    </div>
+
+    <div>
+        <%= f.label :stock_quantity %>
+        <%= f.number_field :stock_quantity %>
+    </div>
+
+    <div>
+        <%= f.label :item_price %>
+        <%= f.number_field :item_price %>
+    </div>
+
+    <div>
+        <%= f.label :item_active %>
+        <%= f.check_box :item_active %>
+    </div>
+
+    <%= f.submit "Submit!" %>
+
+<% end %>
