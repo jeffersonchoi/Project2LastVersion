@@ -19,6 +19,8 @@ class ShoppingcartsController < ApplicationController
 
   def shoppingcartitem_create
     @shoppingcartitem = Shoppingcartitem.new(shoppingcartitem_params)
+    @shoppingcartitem.shoppingcart = session[:current_order_id].to_i
+    @shoppingcartitem.item = params[:item_id].to_i
     if @shoppingcartitem.save
       flash.now[:success] = "You have added item to your shopping cart."
     else
@@ -35,7 +37,7 @@ class ShoppingcartsController < ApplicationController
 
 private
   def shoppingcartitem_params
-    params.require(:shoppingcartitem).permit(:quantity, :item_id, :shoppingcart_id, :unit_price, :subtotal, :created_at, :updated_at)
+    params.require(:shoppingcartitem).permit(:quantity, :item, :shoppingcart, :unit_price, :subtotal, :created_at, :updated_at)
   end
 
 end
