@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/:user_id/items/:id/edit' => 'users#user_item_edit', as: :edit_user_item
   patch 'users/:user_id/items/:id' => 'users#user_item_update'
   resources :users
+  resources :shoppingcarts
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'

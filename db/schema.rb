@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606024003) do
+ActiveRecord::Schema.define(version: 20150606162945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20150606024003) do
 
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
+  create_table "shoppingcarts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.decimal  "total"
+    t.boolean  "order_active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "shoppingcarts", ["user_id"], name: "index_shoppingcarts_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -39,4 +49,5 @@ ActiveRecord::Schema.define(version: 20150606024003) do
   end
 
   add_foreign_key "items", "users"
+  add_foreign_key "shoppingcarts", "users"
 end
