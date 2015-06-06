@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def items_index
+    @items = Item.all
+  end
+
   def user_item_index
     @user = User.find(params[:id])
     @items = @user.items

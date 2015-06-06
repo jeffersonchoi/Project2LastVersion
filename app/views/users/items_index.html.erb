@@ -1,0 +1,21 @@
+<h1>Items Lists</h1>
+
+
+<table>
+	<tr>
+		<th> Item Name </th>
+    <th> Stock Quantity </th>
+    <th> Item Price </th>
+    <th> Item Active? </th>
+    <th> Posted Time </th>
+	</tr>
+    <% @items.each do |item| %>
+		<tr>
+			<td> <%= item.item_name %> </td>
+
+			<td> <%= item.stock_quantity %> </td>
+			<td> <%= item.item_price %> </td>
+      <td> <%= item.item_active %> </td>
+      <% end %>
+		</tr>
+</table>

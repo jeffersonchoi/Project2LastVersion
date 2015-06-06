@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get 'items' => 'users#items_index', as: :items
   get 'users/:id/items/' => 'users#user_item_index', as: :user_items
   get 'users/:id/items/new' => 'users#user_item_new', as: :new_user_item
   post 'users/:id/items' => 'users#user_item_create'
