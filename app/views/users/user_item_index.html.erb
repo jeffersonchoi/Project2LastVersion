@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th> Item Name</th>
+    <th> Sell By: </th>
+
+  </tr>
+
+<% @items.each do |item| %>
+<tr>
+  <td> <%= item.item_name %> </td>
+  <td> <%= item.user.first_name %> </td>
+</tr>
+<% end %>
+
+</table>
