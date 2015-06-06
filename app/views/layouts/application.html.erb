@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project2lastversion</title>
+  <title>Project 2---Amazon</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if current_user %>
+    Logged in as: <%= current_user.first_name %> <%= link_to 'Log Out', logout_path, method: :delete %>
+    <%= link_to "Edit My Profile", edit_user_path(current_user)%>
+      <% else %>
+      <% end %>
+  <% else %>
+    <%= link_to 'Log In', login_path %>
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
 <%= yield %>
 
 </body>
