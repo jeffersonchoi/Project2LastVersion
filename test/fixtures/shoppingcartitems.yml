@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shoppingcart_id: 
+  item_id: 
+  quantity: 1
+  unit_price: 9.99
+  subtotal: 9.99
+
+two:
+  shoppingcart_id: 
+  item_id: 
+  quantity: 1
+  unit_price: 9.99
+  subtotal: 9.99
