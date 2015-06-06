@@ -1,0 +1,24 @@
+<h1>Users Lists</h1>
+
+
+<table>
+	<tr>
+		<th> First Name </th>
+		<th> Last Name </th>
+    <th> Email </th>
+    <th> Date of Birth </th>
+    <th> Users Details</th>
+		<th> Item Details </th>
+
+	</tr>
+    <% @users.each do |user| %>
+		<tr>
+			<td> <%= user.first_name %> </td>
+			<td> <%= user.last_name %> </td>
+      <td> <%= user.email %> </td>
+      <td> <%= user.date_of_birth %> </td>
+      <td> <%= link_to "#{user.first_name}'s Details", user_path(user) %> </td>
+			<td> <%= link_to "#{user.first_name}'s Items List", user_items_path(user) %> </td>
+      <% end %>
+		</tr>
+</table>
