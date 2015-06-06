@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'users/:user_id/items/:id' => 'users#user_item_show', as: :user_item
   get 'users/:user_id/items/:id/edit' => 'users#user_item_edit', as: :edit_user_item
   patch 'users/:user_id/items/:id' => 'users#user_item_update'
+  get 'shoppingcarts/' => 'shoppingcarts#index', as: :shoppingcarts
+  get 'shoppingcarts/new' => 'shoppingcarts#shoppingcartitem_new', as: :new_shoppingcartitems
+  post 'shoppingcarts/' => 'shoppingcarts#shoppingcartitem_create'
+  get 'shoppingcarts/' => 'shoppingcarts#show', as: :shoppingcartitems
   resources :users
   resources :shoppingcarts
 

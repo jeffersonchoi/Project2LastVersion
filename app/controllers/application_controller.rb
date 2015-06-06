@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def shoppingcart_status
-    @neworder = Order.new
+    @neworder = Shoppingcart.new
     @neworder.user_id = current_user
     @neworder.save
     session[:current_order_id] = @neworder.id.to_s

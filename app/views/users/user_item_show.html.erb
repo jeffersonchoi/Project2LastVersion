@@ -8,6 +8,7 @@
 		<th> Item Price </th>
     <th> Item Active? </th>
 		<th> Posted Time </th>
+		
 	</tr>
 		<tr>
       <td> <%= @item.id %> </td>
@@ -16,6 +17,7 @@
 			<td> <%= @item.item_price %> </td>
       <td> <%= @item.item_active %> </td>
       <td> <%= time_ago_in_words (@item.created_at) %> ago.</td>
+
 		</tr>
 </table>
 

@@ -25,7 +25,7 @@
 				<% if current_user == @user %>
 				<td> <%= link_to "Edit Items", edit_user_item_path(:current_user, item.id)%></td>
 				<% else %>
-
+				<td> <%= link_to "Add to cart", new_shoppingcart_path(:item_id => item.id) %> </td>
 				<% end %>
 			<% end %>
 
