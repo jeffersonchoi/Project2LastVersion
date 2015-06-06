@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def shoppingcart_status
-    @neworder = User.find(current_user).shoppingcarts.build
     @neworder = Shoppingcart.new
     @neworder.user = current_user
     @neworder.save

@@ -27,6 +27,13 @@ class ShoppingcartsController < ApplicationController
     redirect_to shoppingcarts_path
   end
 
+  def checkout
+    session.delete(:current_order_id)
+    redirect_to shoppingcarts_path
+  end
+
+
+private
   def shoppingcartitem_params
     params.require(:shoppingcartitem).permit(:quantity, :item_id, :shoppingcart_id, :unit_price, :subtotal, :created_at, :updated_at)
   end
