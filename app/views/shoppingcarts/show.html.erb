@@ -1,0 +1,21 @@
+<h1><%= current_user.first_name %>'s <%= @shoppingcart.id %></h1>
+
+<table>
+	<tr>
+    <th> Order ID </th>
+    <!-- loop through that shoppingcart's shoppingcartitems -->
+		<!-- <th> Item Name </th>
+		<th> Stock Quantity </th> -->
+		<th> Total Price </th>
+    <th> Order Active? </th>
+		<th> Posted Time </th>
+	</tr>
+		<tr>
+      <td> <%= @shoppingcart.id %> </td>
+
+      <td> <%= @shoppingcart.order_active %> </td>
+      <td> <%= time_ago_in_words (@shoppingcart.created_at) %> ago.</td>
+		</tr>
+</table>
+
+<%= link_to "Back to #{current_user.first_name}'s Order Lists", shoppingcarts_path(current_user) %>

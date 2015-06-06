@@ -10,14 +10,13 @@
 
 
 	</tr>
-    <% @shoppingcarts.each do |shoppngcart| %>
+    <% @shoppingcarts.each do |shoppingcart| %>
 		<tr>
 			<td> <%= shoppingcart.id %> </td>
 			<td> <%= shoppingcart.total %> </td>
       <td> <%= shoppingcart.order_active %> </td>
       <td> <%= shoppingcart.created_at %> </td>
-      <!-- <td> <%= link_to "#{user.first_name}'s Details", user_path(user) %> </td>
-			<td> <%= link_to "#{user.first_name}'s Items List", user_items_path(user) %> </td> -->
+      <td> <%= link_to "Details", shoppingcart_path(shoppingcart) %>
       <% end %>
 		</tr>
 </table>

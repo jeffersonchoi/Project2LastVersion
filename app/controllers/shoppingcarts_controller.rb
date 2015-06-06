@@ -4,8 +4,8 @@ class ShoppingcartsController < ApplicationController
     @shoppingcarts = Shoppingcart.all
   end
 
-  # def show
-  #   @shoppingcart = Shoppingcart.find(params[:id])
-  # end
+  def show
+    @shoppingcart = Shoppingcart.find(params[:id])
+  end
 
 end
