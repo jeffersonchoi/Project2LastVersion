@@ -1,4 +1,4 @@
-<%= form_for ([@shoppingcartitem.shoppingcart, @shoppingcartitem]) do |f| %>
+<%= form_for ([@shoppingcartitem.shoppingcart, @shoppingcartitem.item, @shoppingcartitem]) do |f| %>
   <div>
     <%= f.label :quantity %>
     <%= f.text_field :quantity %>

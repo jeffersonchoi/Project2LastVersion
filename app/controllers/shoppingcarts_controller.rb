@@ -18,9 +18,12 @@ class ShoppingcartsController < ApplicationController
   end
 
   def shoppingcartitem_create
+    if session[:current_order_id] == nil
+      shoppingcart_status
+    end
     @shoppingcartitem = Shoppingcartitem.new(shoppingcartitem_params)
-    @shoppingcartitem.shoppingcart = session[:current_order_id].to_i
-    @shoppingcartitem.item = params[:item_id].to_i
+    @shoppingcartitem.shoppingcart = session[:current_order_id]
+    @shoppingcartitem.item = params[:item_id]
     if @shoppingcartitem.save
       flash.now[:success] = "You have added item to your shopping cart."
     else

@@ -1,4 +1,8 @@
 <h1><%= @user.first_name %>'s items list</h1>
+<div class="container">
+
+
+	<table class="table table-hover">
 
 <table>
 	<tr>
@@ -8,6 +12,7 @@
 		<th> Item Price </th>
 		<th> Active? </th>
 		<th> Posted Time </th>
+		<th> Details </th>
 		<% if current_user.id == @user.id %>
 			<th> Edit details? </th>
 		<% else %>
@@ -22,6 +27,7 @@
 			<td> <%= item.item_price %> </td>
 			<td> <%= item.item_active %> </td>
       <td> <%= time_ago_in_words (item.created_at) %> ago.</td>
+			<td> <%= link_to "Item", user_item_path(@user, item.id) %> </td>
 				<% if current_user == @user %>
 				<td> <%= link_to "Edit Items", edit_user_item_path(:current_user, item.id)%></td>
 				<% else %>
@@ -31,4 +37,6 @@
 
 		</tr>
 </table>
+
+</div>
 <%= link_to "Back to #{@user.first_name}'s profile", user_path(@user) %>

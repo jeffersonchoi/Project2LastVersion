@@ -47,9 +47,9 @@ class UsersController < ApplicationController
 
   def user_item_destroy
     @user = User.find(current_user)
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
     @item.destroy
-    redirect_to user_items_path
+    redirect_to user_items_path(current_user)
   end
 
 

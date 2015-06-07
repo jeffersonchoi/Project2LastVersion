@@ -17,13 +17,12 @@
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">WebSiteName</a>
+    <a class="navbar-brand">Failure</a>
   </div>
   <div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
       <li><%= link_to "Users List", users_path %></li>
-      <li><%= link_to "Items List", items_path %> </li>
+      <li class="active"><%= link_to "Items List", items_path %> </li>
       <li><%= link_to "Upload New Item", new_user_item_path(current_user) %> </li>
       <li><%= link_to "My Items", user_items_path(current_user) %>
       <li><%= link_to "Checkout", checkout_path %> </li>

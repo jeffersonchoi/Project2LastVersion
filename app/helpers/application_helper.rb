@@ -5,9 +5,9 @@ module ApplicationHelper
 
   def shoppingcart_status
     @neworder = Shoppingcart.new
-    @neworder.user_id = current_user
+    @neworder.user = current_user
     @neworder.save
-    session[:current_order_id] = @neworder.id.to_s
+    session[:current_order_id] = @neworder.id
     return session[:current_order_id]
   end
 end
