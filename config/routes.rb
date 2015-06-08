@@ -11,8 +11,28 @@ Rails.application.routes.draw do
   get 'shoppingcarts/new' => 'shoppingcarts#shoppingcartitem_new', as: :new_shoppingcartitems
   post 'shoppingcarts/' => 'shoppingcarts#shoppingcartitem_create'
   get 'shoppingcarts/' => 'shoppingcarts#show', as: :shoppingcartitems, as: :item_shoppingcartitems
-  resources :users
-  resources :shoppingcarts
+  get '/users' => 'users#index', as: :users
+
+  post '/users' => 'users#create'
+  get '/users/new' => 'users#new', as: :new_user
+  get '/users/:id/edit' => 'users#edit', as: :edit_user
+  get '/users/:id' => 'users#show', as: :user
+  patch '/users/:id' => 'users#update'
+  delete '/users/:id' => 'users#destroy'
+  get '/shoppingcarts' => 'shoppingcarts#index'
+  post '/shoppingcarts' => 'shoppingcarts#create'
+  get '/shoppingcarts/new' => 'shoppingcarts#new', as: :new_shoppingcart
+  get '/shoppingcarts/:id/edit' => 'shoppingcarts#edit', as: :edit_shoppingcart
+  get '/shoppingcarts/:id' => 'shoppingcarts#show', as: :shoppingcart
+  patch '/shoppingcarts/:id' => 'shoppingcarts#update'
+  delete '/shoppingcarts/:id' => 'shoppingcarts#destroy'
+
+
+
+
+
+  # resources :users
+  # resources :shoppingcarts
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'
